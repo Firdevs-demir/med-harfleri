@@ -5,16 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Med Harfleri</title>
 
-  <!-- Türkçe başlık fontu -->
-  <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet" />
-  <!-- Arapça için Scheherazade New -->
-  <link href="https://fonts.googleapis.com/css2?family=Schehe<!DOCTYPE html>
-<html lang="tr" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Med Harfleri</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Capriola&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet" />
 
@@ -67,7 +57,7 @@
     }
 
     .word-box.red-fade {
-      animation: redFade 1.5s ease forwards;
+      animation: redFade 3.7s ease forwards;
     }
 
     @keyframes redFade {
@@ -76,8 +66,8 @@
       }
       50% {
         color: red;
-        text-shadow: 0 0 10px red;
-        font-weight: 700;
+        text-shadow: 1 1 1000px red;
+        font-weight: 1000;
       }
       100% {
         color: black;
@@ -158,120 +148,6 @@
       audio.play().catch((e) => {
         console.warn(`Ses dosyası çalınamadı: ${audioFile}`, e);
         alert(`Ses dosyası bulunamadı: ${audioFile}`);
-      });
-    }
-  </script>
-</body>
-</html>razade+New&display=swap" rel="stylesheet" />
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Capriola', sans-serif;
-      background-color: #ffffff; /* Beyaz arka plan */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      direction: rtl;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 2rem;
-      margin: 20px;
-      font-family: 'Capriola', sans-serif;
-      color: #333;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      padding: 10px;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .word-box {
-      background-color: #ffffff; /* Kutular beyaz */
-      border: 2px solid #CB9B39;
-      border-radius: 8px;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 1.7rem;
-      cursor: pointer;
-      font-family: 'Scheherazade New', serif;
-      user-select: none;
-      color: black;
-      transition: color 1s ease;
-    }
-
-    /* Kırmızı renk animasyonu */
-    .word-box.red-fade {
-      animation: redFade 1.5s ease forwards;
-    }
-
-    @keyframes redFade {
-      0% {
-        color: black;
-      }
-      50% {
-        color: red;
-        text-shadow: 0 0 10px red;
-        font-weight: 700;
-      }
-      100% {
-        color: black;
-        font-weight: 400;
-        text-shadow: none;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .word-box {
-        font-size: 2rem;
-        padding: 14px 0;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<h1>MED HARFLERİ</h1>
-  <div class="grid" id="wordGrid"></div>
-
-  <script>
-    const words = [
-      "قَالَ", "كَانَ", "كِتَابُ", "جوَابَ", "مَا دَامَ", "سُبْحَانَ", 
-      "جِبَالَ", "رَمَضَانَ", "أَخِي", "دِينُ", "قَدِيرُ", "عَظِيمُ",
-      "عَالَمِينَ", "صَادِقِينَ", "مُؤْمِنِينَ", "مُسْتَقيمُ", "قَالُوا",
-      "كُونُوا", "أَعُوذُ", "رَسُولُ", "يَعْلَمُونَ", "يَشْكُرُونَ",
-      "تَعْبُدُونَ", "عَابِدُونَ", "يَمِيلُونَ", "مُجَاهِدُونَ",
-      "مُهَاجِرُونَ", "يَسْتَطيعُونَ"
-    ];
-
-    const grid = document.getElementById('wordGrid');
-
-    words.forEach(word => {
-      const box = document.createElement('div');
-      box.className = 'word-box';
-      box.textContent = word;
-
-      box.addEventListener('click', () => {
-        playAudio(word);
-        box.classList.remove('red-fade'); // animasyonu resetle
-        void box.offsetWidth; // reflow tetikle
-        box.classList.add('red-fade');
-      });
-
-      grid.appendChild(box);
-    });
-
-    function playAudio(word) {
-      const audio = new Audio(`${word}.mp3`);
-      audio.play().catch(() => {
-        console.warn(`Ses dosyası bulunamadı: ${word}.mp3`);
       });
     }
   </script>
